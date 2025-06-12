@@ -2,15 +2,15 @@
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Image from 'next/image';
+import type { ImgHTMLAttributes } from 'react';
 
 const components = {
-    img: (props: any) => {
+    img: (props: ImgHTMLAttributes<HTMLImageElement>) => {
         const fullSrc = `/images/${props.src}`;
-        console.log('Rendering image with src:', fullSrc); // ✅ Debug output
         return (
             <Image
                 src={fullSrc}
-                alt={props.alt}
+                alt={props.alt ?? ''}
                 width={800}
                 height={400}
                 className="rounded-lg my-6"

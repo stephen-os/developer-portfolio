@@ -1,5 +1,16 @@
+export interface ContributionDay {
+    date: string;
+    contributionCount: number;
+}
+
+export interface GitHubStats {
+    contributions: ContributionDay[][];
+    totalContributions: number;
+    repoCount: number;
+}
+
 export let githubStatsCache: {
-    contributions: any[][] | null;
+    contributions: ContributionDay[][] | null;
     totalContributions: number | null;
     repoCount: number | null;
 } = {
@@ -8,10 +19,10 @@ export let githubStatsCache: {
     repoCount: null,
 };
 
-export function setGithubStatsCache(data: {
-    contributions: any[][],
-    totalContributions: number,
-    repoCount: number,
-}) {
-    githubStatsCache = data;
+export function setGithubStatsCache(data: GitHubStats) {
+    githubStatsCache = {
+        contributions: data.contributions,
+        totalContributions: data.totalContributions,
+        repoCount: data.repoCount,
+    };
 }

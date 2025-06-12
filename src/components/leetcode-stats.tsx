@@ -19,7 +19,6 @@ interface LeetCodeStats {
 
 export const LeetCodeStatistics: React.FC = () => {
     const [stats, setStats] = useState<LeetCodeStats | null>(leetcodeStatsCache.stats);
-    const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(!leetcodeStatsCache.stats);
 
     useEffect(() => {
@@ -30,24 +29,18 @@ export const LeetCodeStatistics: React.FC = () => {
         const fetchStats = async () => {
             try {
                 setLoading(true);
-                setError(null);
-
                 const response = await fetch('/api/leetcode-stats');
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                const data = await response.json();
+                const data: LeetCodeStats = await response.json();
                 setStats(data);
-
-                if (data.error) {
-                    setError(data.error);
-                }
-
                 setLeetcodeStatsCache(data);
             } catch (err) {
-                setError(err instanceof Error ? err.message : 'Failed to fetch LeetCode statistics.');
+                // Optionally log the error if needed
+                console.error('Failed to fetch LeetCode statistics.', err);
             } finally {
                 setLoading(false);
             }
@@ -83,62 +76,66 @@ export const LeetCodeStatistics: React.FC = () => {
             {/* Difficulty Breakdown */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* Easy */}
-                <div className="bg-neutral-700 rounded-lg p-4 text-center flex flex-col items-center">
-                    <div className="flex flex-col md:flex-row md:space-x-2 justify-between items-center mb-2 w-full sm:w-auto">
-                        <span className="text-green-400 font-semibold">Easy</span>
-                        <span className="text-stone-300 text-sm mt-1 sm:mt-0">
-                            {stats?.easySolved || 0}/{stats?.easyTotal || 0}
-                        </span>
-                    </div>
-                    <div className="w-full bg-neutral-600 rounded-full h-2 mb-2">
-                        <div
-                            className="bg-green-400 h-2 rounded-full transition-all duration-300"
-                            style={{
-                                width: `${stats?.easyTotal ? Math.min((stats.easySolved / stats.easyTotal) * 100, 100) : 0}%`
-                            }}
-                        ></div>
-                    </div>
-                    <p className="text-2xl font-bold text-green-400">{stats?.easySolved || 0}</p>
-                </div>
+                <DifficultyCard
+                    label="Easy"
+                    solved={stats?.easySolved || 0}
+                    total={stats?.easyTotal || 0}
+                    barColor="bg-green-400"
+                    textColor="text-green-400"
+                />
 
                 {/* Medium */}
-                <div className="bg-neutral-700 rounded-lg p-4 text-center flex flex-col items-center">
-                    <div className="flex flex-col md:flex-row md:space-x-2 justify-between items-center mb-2 w-full sm:w-auto">
-                        <span className="text-yellow-400 font-semibold">Medium</span>
-                        <span className="text-stone-300 text-sm mt-1 sm:mt-0">
-                            {stats?.mediumSolved || 0}/{stats?.mediumTotal || 0}
-                        </span>
-                    </div>
-                    <div className="w-full bg-neutral-600 rounded-full h-2 mb-2">
-                        <div
-                            className="bg-yellow-400 h-2 rounded-full transition-all duration-300"
-                            style={{
-                                width: `${stats?.mediumTotal ? Math.min((stats.mediumSolved / stats.mediumTotal) * 100, 100) : 0}%`
-                            }}
-                        ></div>
-                    </div>
-                    <p className="text-2xl font-bold text-yellow-400">{stats?.mediumSolved || 0}</p>
-                </div>
+                <DifficultyCard
+                    label="Medium"
+                    solved={stats?.mediumSolved || 0}
+                    total={stats?.mediumTotal || 0}
+                    barColor="bg-yellow-400"
+                    textColor="text-yellow-400"
+                />
 
                 {/* Hard */}
-                <div className="bg-neutral-700 rounded-lg p-4 text-center flex flex-col items-center">
-                    <div className="flex flex-col md:flex-row md:space-x-2 justify-between items-center mb-2 w-full sm:w-auto">
-                        <span className="text-red-400 font-semibold">Hard</span>
-                        <span className="text-stone-300 text-sm mt-1 sm:mt-0">
-                            {stats?.hardSolved || 0}/{stats?.hardTotal || 0}
-                        </span>
-                    </div>
-                    <div className="w-full bg-neutral-600 rounded-full h-2 mb-2">
-                        <div
-                            className="bg-red-400 h-2 rounded-full transition-all duration-300"
-                            style={{
-                                width: `${stats?.hardTotal ? Math.min((stats.hardSolved / stats.hardTotal) * 100, 100) : 0}%`
-                            }}
-                        ></div>
-                    </div>
-                    <p className="text-2xl font-bold text-red-400">{stats?.hardSolved || 0}</p>
-                </div>
+                <DifficultyCard
+                    label="Hard"
+                    solved={stats?.hardSolved || 0}
+                    total={stats?.hardTotal || 0}
+                    barColor="bg-red-400"
+                    textColor="text-red-400"
+                />
             </div>
+        </div>
+    );
+};
+
+const DifficultyCard = ({
+    label,
+    solved,
+    total,
+    barColor,
+    textColor,
+}: {
+    label: string;
+    solved: number;
+    total: number;
+    barColor: string;
+    textColor: string;
+}) => {
+    const progress = total ? Math.min((solved / total) * 100, 100) : 0;
+
+    return (
+        <div className="bg-neutral-700 rounded-lg p-4 text-center flex flex-col items-center">
+            <div className="flex flex-col md:flex-row md:space-x-2 justify-between items-center mb-2 w-full sm:w-auto">
+                <span className={`${textColor} font-semibold`}>{label}</span>
+                <span className="text-stone-300 text-sm mt-1 sm:mt-0">
+                    {solved}/{total}
+                </span>
+            </div>
+            <div className="w-full bg-neutral-600 rounded-full h-2 mb-2">
+                <div
+                    className={`${barColor} h-2 rounded-full transition-all duration-300`}
+                    style={{ width: `${progress}%` }}
+                />
+            </div>
+            <p className={`text-2xl font-bold ${textColor}`}>{solved}</p>
         </div>
     );
 };

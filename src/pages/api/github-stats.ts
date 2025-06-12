@@ -9,6 +9,13 @@ interface ContributionDay {
     contributionCount: number;
 }
 
+interface GitHubGraphQLError {
+    message: string;
+    locations?: { line: number; column: number }[];
+    path?: string[];
+    extensions?: Record<string, unknown>;
+}
+
 interface GitHubStatisticsResponse {
     data: {
         user: {
@@ -25,8 +32,9 @@ interface GitHubStatisticsResponse {
             };
         };
     };
-    errors?: any[];
+    errors?: GitHubGraphQLError[];
 }
+
 
 export default async function handler(
     req: NextApiRequest,

@@ -4,9 +4,10 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Layout from '../layout';
 import MarkdownRenderer from '@/components/markdown-renderer';
 import { getMdxContent, getAllSlugs } from '@/lib/mdx';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 type Props = {
-    source: any;
+    source: MDXRemoteSerializeResult;
     data: {
         title: string;
         description: string;

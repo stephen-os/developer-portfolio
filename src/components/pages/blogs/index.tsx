@@ -1,6 +1,6 @@
-// components/pages/blogs/index.tsx
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Blog } from '@/lib/get-blogs';
 
 type Props = {
@@ -20,11 +20,16 @@ const BlogIndex = ({ blogs }: Props) => {
                         transition={{ delay: i * 0.1 }}
                         className="bg-neutral-800 border border-stone-700 rounded-xl p-6 shadow-md"
                     >
-                        <img
-                            src={blog.image}
-                            alt={blog.title}
-                            className="rounded-md mb-4 w-full h-48 object-cover"
-                        />
+                        <div className="relative w-full h-48 mb-4 rounded-md overflow-hidden">
+                            <Image
+                                src={blog.image}
+                                alt={blog.title}
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-md"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        </div>
                         <h2 className="text-xl font-semibold text-white mb-2">{blog.title}</h2>
                         <p className="text-stone-400 mb-4">{blog.description}</p>
                         <Link href={`/blogs/${blog.slug}`}>
