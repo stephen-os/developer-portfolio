@@ -24,7 +24,7 @@ export const getAllBlogs = (): Blog[] => {
             slug,
             title: data.title,
             description: data.description,
-            image: `/images/blogs/${data.image}`,
+            image: `/images/${data.image}`,
         };
     });
 };

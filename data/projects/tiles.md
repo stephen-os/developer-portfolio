@@ -1,7 +1,7 @@
 ---
 title: "Tiles"
 description: "A 2D map creator with texture atlas importing, layer-based editing, and export features for building detailed 2D worlds."
-image: "tiles/application.png"
+image: "projects/tiles/application.png"
 ---
 
 # Tiles
@@ -9,7 +9,7 @@ image: "tiles/application.png"
 
 **Tiles** is a 2D map creator that allows users to upload texture atlases and build detailed 2D worlds. It features a **layer-based approach**, enabling users to organize, edit, and toggle textured layers for precise control. The tool includes essential features like erase and fill tools for modifying large areas efficiently. Projects can be **saved and loaded** for continued editing and exported as a **single image** or **multiple grouped layers**, depending on user needs.
 
-![Tiles Screenshot](tiles/application.png)
+![Tiles Screenshot](projects/tiles/application.png)
 
 ## 🚀 Features
 
@@ -38,7 +38,7 @@ Tiles is built using several key libraries:
 
 ModeSeven by Andrew Bulhak.
 
-![Factory Level 1](tiles/factory-level-1.png)
+![Factory Level 1](projects/tiles/factory-level-1.png)
 
 ## 📥 Installation & Usage
 

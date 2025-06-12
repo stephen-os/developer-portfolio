@@ -1,7 +1,7 @@
 ---
 title: "My First Blog Post"
 description: "An introduction to my blogging journey and what to expect."
-image: "first-post/cover.jpg"
+image: "blogs/first-post/cover.jpg"
 ---
 
 Welcome to my first blog post! In this post, I'll share my thoughts on starting a blog and what topics I'll cover going forward.
@@ -18,4 +18,4 @@ Blogging is a great way to document your ideas, share knowledge, and connect wit
 
 Stay tuned for upcoming posts, and thank you for reading!
 
-![Blog Post Cover Image](first-post/cover.jpg)
+![Blog Post Cover Image](blogs/first-post/cover.jpg)
