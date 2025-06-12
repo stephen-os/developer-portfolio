@@ -1,7 +1,10 @@
 ---
 title: "Tiles"
 description: "A 2D map creator with texture atlas importing, layer-based editing, and export features for building detailed 2D worlds."
-image: "application.png"
+image: "tiles/application.png"
+---
+
+# Tiles
 ---
 
 **Tiles** is a 2D map creator that allows users to upload texture atlases and build detailed 2D worlds. It features a **layer-based approach**, enabling users to organize, edit, and toggle textured layers for precise control. The tool includes essential features like erase and fill tools for modifying large areas efficiently. Projects can be **saved and loaded** for continued editing and exported as a **single image** or **multiple grouped layers**, depending on user needs.

@@ -24,7 +24,7 @@ export const getAllProjects = (): Project[] => {
             slug,
             title: data.title,
             description: data.description,
-            image: `/images/projects/${slug}/${data.image}`,
+            image: `/images/projects/${data.image}`,
         };
     });
 };
