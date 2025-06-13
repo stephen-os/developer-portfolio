@@ -17,9 +17,9 @@ type Props = {
 export default function ProjectPage({ source, data }: Props) {
     return (
         <Layout>
-            <article className="prose prose-invert prose-pre:bg-neutral-900 prose-code:text-orange-300 prose-hr:border-t border-stone-700 max-w-3xl mx-auto py-10 [&_a]:text-[#3B82F6]">
-                <h1>{data.title}</h1>
-                <p className="text-lg text-gray-400">{data.description}</p>
+            <article className="w-full max-w-5xl mx-auto px-4 py-10">
+                <h1 className="text-3xl font-bold text-white mb-2">{data.title}</h1>
+                <p className="text-lg text-gray-400 mb-6">{data.description}</p>
                 <MarkdownRenderer source={source} />
             </article>
         </Layout>
