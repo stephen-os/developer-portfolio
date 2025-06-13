@@ -1,4 +1,3 @@
-// lib/get-projects.ts
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -8,6 +7,7 @@ export type Project = {
     title: string;
     description: string;
     image: string;
+    tech: string[];
 };
 
 export const getAllProjects = (): Project[] => {
@@ -25,6 +25,7 @@ export const getAllProjects = (): Project[] => {
             title: data.title,
             description: data.description,
             image: `/images/${data.image}`,
+            tech: data.tech || [],
         };
     });
 };

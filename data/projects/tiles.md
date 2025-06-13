@@ -2,6 +2,8 @@
 title: "Tiles"
 description: "A 2D map creator with texture atlas importing, layer-based editing, and export features for building detailed 2D worlds."
 image: "projects/tiles/application.png"
+tech:
+   - cplusplus
 ---
 
 # Tiles
