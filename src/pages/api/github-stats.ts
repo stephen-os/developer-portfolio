@@ -44,7 +44,7 @@ export default async function handler(
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const username = "stephen-os";
+    const username = process.env.GITHUB_USERNAME || '';
     const token = process.env.GITHUB_TOKEN || '';
 
     if (!token) {
