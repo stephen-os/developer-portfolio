@@ -54,7 +54,7 @@ export const LeetCodeStatistics: React.FC = () => {
     }
 
     return (
-        <div className="w-full max-w-screen-lg bg-neutral-800 border border-stone-700 rounded-2xl shadow-lg px-6 py-4">
+        <div className="w-full max-w-screen-lg bg-neutral-800 rounded-2xl shadow-lg px-6 py-4">
             {/* Main Stats */}
             <div className="flex flex-col sm:flex-row justify-center gap-8 mb-6">
                 <div className="text-center">

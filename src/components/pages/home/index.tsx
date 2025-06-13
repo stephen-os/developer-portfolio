@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { HiDocumentDownload } from 'react-icons/hi';
 
+import TypewriterSwitch from '@/components/typewriter-switch';
 import { GitHubStatistics } from '@/components/github-stats';
 import { LeetCodeStatistics } from '@/components/leetcode-stats';
 
@@ -14,22 +14,12 @@ const HomeIndex = () => {
                 {/* Left: Intro */}
                 <section className="flex flex-col md:flex-row text-center md:text-left">
                     <div className="space-y-6">
-                        <h1 className='text-2xl md:text-4xl font-bold'>Stephen Watson</h1>
+                        <h1 className='text-2xl md:text-4xl font-bold'>
+                            <TypewriterSwitch texts={["Stephen Watson", "Software Engineer"]} />
+                        </h1>
                         <p className="text-stone-400 text-base md:text-lg max-w-sm md:max-w-md mx-auto md:mx-0">
                             I&rsquo;m a software engineer passionate about building graphics tools, full-stack systems, and exploring low-level design.
                         </p>
-
-                        {/* CTA Buttons */}
-                        <div className="flex space-x-6 flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0">
-                            <a
-                                href="/resume.pdf"
-                                download
-                                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-lg transition"
-                            >
-                                <HiDocumentDownload size={20} />
-                                <span>Download Resume</span>
-                            </a>
-                        </div>
                     </div>
                 </section>
 
@@ -40,9 +30,9 @@ const HomeIndex = () => {
                     <Image
                         src={profilePic}
                         alt="Profile"
-                        width={288} // md:w-72
+                        width={288}
                         height={288}
-                        className="rounded-full object-cover shadow-xl border-4 border-white"
+                        className="rounded-full object-cover shadow-xl border-1 border-white"
                     />
                 </section>
             </section>

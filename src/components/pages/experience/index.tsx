@@ -49,7 +49,7 @@ const cardVariants = {
 const ExperienceCard = ({ item }: { item: ExperienceItem }) => (
     <motion.div
         variants={cardVariants}
-        className="bg-neutral-800 border border-stone-700 rounded-xl shadow-md p-6 space-y-2"
+        className="bg-neutral-800 rounded-xl shadow-md p-6 space-y-2"
     >
         <h3 className="text-xl font-semibold text-white">{item.title}</h3>
         <p className="text-stone-400 italic">{item.place} — {item.timeframe}</p>

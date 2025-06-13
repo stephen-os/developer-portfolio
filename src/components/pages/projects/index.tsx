@@ -19,7 +19,7 @@ const ProjectsIndex = ({ projects }: Props) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.1 }}
-                        className="bg-neutral-800 border border-stone-700 rounded-xl p-6 shadow-md"
+                        className="bg-neutral-800 rounded-xl p-6 shadow-md"
                     >
                         <div className="relative w-full h-48 mb-4 rounded-md overflow-hidden">
                             <Image

@@ -73,12 +73,12 @@ export const GitHubStatistics: React.FC = () => {
     if (error) return <p className="text-red-600 font-mono">{error}</p>;
 
     return (
-        <div className="w-full max-w-screen-lg bg-neutral-800 border border-stone-700 rounded-2xl shadow-lg px-6 py-4">
+        <div className="w-full max-w-screen-lg bg-neutral-800 rounded-2xl shadow-lg px-6 py-4">
             {/* Stats Header */}
             <div className="flex justify-center gap-8 mb-6">
                 <div className="text-center">
                     <p className="text-2xl font-bold text-orange-400">{repoCount}+</p>
-                    <p className="text-stone-400 text-sm">Public Repos</p>
+                    <p className="text-stone-600 text-sm">Public Repos</p>
                 </div>
                 <div className="text-center">
                     <p className="text-2xl font-bold text-orange-400">{totalContributions}+</p>
