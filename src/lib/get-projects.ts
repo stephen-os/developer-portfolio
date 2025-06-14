@@ -8,6 +8,7 @@ export type Project = {
     description: string;
     image: string;
     tech: string[];
+    github: string;
 };
 
 export const getAllProjects = (): Project[] => {
@@ -25,6 +26,7 @@ export const getAllProjects = (): Project[] => {
             title: data.title,
             description: data.description,
             image: `/images/${data.image}`,
+            github: data.github,
             tech: data.tech || [],
         };
     });
