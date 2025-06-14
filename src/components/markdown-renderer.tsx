@@ -49,6 +49,7 @@ const CLEAN_STYLE = [
 
 const components = {
     img: (props: ImgHTMLAttributes<HTMLImageElement>) => {
+        if (!props.src) return null;
         const fullSrc = `/images/${props.src}`;
         return (
             <Image
@@ -69,7 +70,7 @@ export default function MarkdownRenderer({
 }) {
     return (
         <div className={CLEAN_STYLE}>
-            <MDXRemote {...source} components={components} />
+            <MDXRemote {...source} />
         </div>
     );
 }

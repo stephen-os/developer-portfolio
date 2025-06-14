@@ -13,7 +13,6 @@ type Props = {
     };
 };
 
-
 export default function ProjectPage({ source, data }: Props) {
     return (
         <Layout>

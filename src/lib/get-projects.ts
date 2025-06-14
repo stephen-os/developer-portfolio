@@ -25,7 +25,7 @@ export const getAllProjects = (): Project[] => {
             slug,
             title: data.title,
             description: data.description,
-            image: `/images/${data.image}`,
+            image: `${data.image}`,
             github: data.github,
             tech: data.tech || [],
         };

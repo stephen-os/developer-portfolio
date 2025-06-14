@@ -1,17 +1,23 @@
 ---
 title: "Tiles"
 description: "A 2D map creator with texture atlas importing, layer-based editing, and export features for building detailed 2D worlds."
-image: "projects/tiles/application.png"
+image: "/projects/tiles/factory-level-1.png"
+github: https://github.com/stw-dev/tiles
 tech:
+   - c
    - cplusplus
+   - opengl
+   - lua
 ---
+
 # Tiles
 
 ---
 
 **Tiles** is a 2D map creator that allows users to upload texture atlases and build detailed 2D worlds. It features a **layer-based approach**, enabling users to organize, edit, and toggle textured layers for precise control. The tool includes essential features like erase and fill tools for modifying large areas efficiently. Projects can be **saved and loaded** for continued editing and exported as a **single image** or **multiple grouped layers**, depending on user needs.
 
-![Tiles Screenshot](projects/tiles/application.png)
+
+<img src="/projects/tiles/application.png" alt="Tiles Screenshot" style={{ maxWidth: '100%', height: 'auto' }} />
 
 ## 🚀 Features
 ---
@@ -43,7 +49,9 @@ Tiles is built using several key libraries:
 
 ModeSeven by Andrew Bulhak.
 
-![Factory Screenshot 1](projects/tiles/factory-level-1.png)
+
+<img src="/projects/tiles/factory-level-1.png" alt="Factory Screenshot 1" style={{ maxWidth: '100%', height: 'auto' }} />
+
 
 ## 📥 Installation & Usage
 ---
@@ -61,7 +69,7 @@ ModeSeven by Andrew Bulhak.
 3. Open the `.sln` file in Visual Studio 2017 or later.
 4. Build and run the project from Visual Studio.
 
-![Factory Screenshot 2](projects/tiles/factory-level-2.png)
+<img src="/projects/tiles/factory-level-2.png" alt="Factory Screenshot 2" style={{ maxWidth: '100%', height: 'auto' }} />
 
 ## 🎨 How to Use
 ---
@@ -87,7 +95,7 @@ ModeSeven by Andrew Bulhak.
    - **File → Load** to reopen saved projects.
 8. To exit the application, go to File->Exit.
 
-![Render Matrix](projects/tiles/render-matrix.png)
+<img src="/projects/tiles/render-matrix.png" alt="Render Matrix" style={{ maxWidth: '100%', height: 'auto' }} />
 
 ## 🏗️ Example Projects
 ---
