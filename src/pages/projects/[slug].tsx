@@ -18,8 +18,6 @@ export default function ProjectPage({ source, data }: Props) {
     return (
         <Layout>
             <article className="w-full max-w-5xl mx-auto px-4 py-10">
-                <h1 className="text-3xl font-bold text-white mb-2">{data.title}</h1>
-                <p className="text-lg text-gray-400 mb-6">{data.description}</p>
                 <MarkdownRenderer source={source} />
             </article>
         </Layout>
