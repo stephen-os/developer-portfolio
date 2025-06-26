@@ -1,7 +1,7 @@
 ---
-title: "Tiles"
-description: "A 2D map creator with texture atlas importing, layer-based editing, and export features for building detailed 2D worlds."
-image: "/projects/frequency-visualiser/exponential_wave.png"
+title: "Frequency Visualiser"
+description: "A dynamic real-time waveform rendering tool"
+image: "/projects/frequency-visualiser/screenshot.png"
 github: https://github.com/stw-dev/frequency-visualiser
 tech:
    - c
