@@ -69,13 +69,12 @@ const HomeIndex = () => {
                     className="flex-shrink-0"
                 >
                     <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-full blur-xl"></div>
                         <Image
                             src={profilePic}
                             alt="Stephen Watson - Profile Picture"
                             width={300}
                             height={300}
-                            className="relative rounded-full object-cover shadow-2xl border-4 border-stone-700"
+                            className="rounded-full object-cover shadow-2xl"
                             priority
                         />
                     </div>
