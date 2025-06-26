@@ -1,82 +1,143 @@
 'use client';
 
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import TypewriterSwitch from '@/components/typewriter-switch';
+import SkillCard from './skill-card';
 
 type Skill = {
     name: string;
-    years: number;
+    icon?: string;
+    years?: number;
 };
 
-const languages: Skill[] = [
-    { name: 'C++', years: 5 },
-    { name: 'JavaScript', years: 5 },
-    { name: 'TypeScript', years: 4 },
-    { name: 'Rust', years: 2 },
-    { name: 'Python', years: 3 },
-];
+type SkillCategory = {
+    title: string;
+    skills: Skill[];
+    description: string;
+};
 
-const frameworks: Skill[] = [
-    { name: 'React', years: 4 },
-    { name: 'Next.js', years: 2 },
-    { name: 'Node.js', years: 4 },
-    { name: 'Express', years: 3 },
+const skillCategories: SkillCategory[] = [
+    {
+        title: "Backend",
+        description: "Server-side technologies and databases I work with",
+        skills: [
+            { name: 'C++', icon: 'cplusplus', years: 5 },
+            { name: 'C', icon: 'c', years: 4 },
+            { name: 'Java', icon: 'java', years: 5 },
+            { name: 'Node.js', icon: 'node', years: 2 },
+            { name: 'Python', icon: 'python', years: 2 },
+            { name: 'Rust', icon: 'rust', years: 2 },
+            { name: 'PostgreSQL', icon: 'postgresql', years: 0.5 },
+            { name: 'Spring Boot', icon: 'springboot', years: 0.5 },
+        ]
+    },
+    {
+        title: "Frontend",
+        description: "Client-side frameworks and technologies",
+        skills: [
+            { name: 'React', icon: 'react', years: 2 },
+            { name: 'Next.js', icon: 'nextjs', years: 0.5 },
+            { name: 'TypeScript', icon: 'typescript', years: 2 },
+            { name: 'JavaScript', icon: 'javascript', years: 2 },
+            { name: 'Tailwind CSS', icon: 'tailwind', years: 1 },
+            { name: 'WebGL', icon: 'webgl', years: 0.5 },
+            { name: 'Three.js', icon: 'threejs', years: 0.5 },
+        ]
+    },
+    {
+        title: "DevOps",
+        description: "Infrastructure and deployment tools",
+        skills: [
+            { name: 'Linux', icon: 'linux', years: 3 },
+            { name: 'Docker', icon: 'docker', years: 0.5 },
+            { name: 'OpenShift', icon: 'openshift', years: 0.5 },
+            { name: 'RHEL', icon: 'redhat', years: 0.5 },
+            { name: 'Ansible', icon: 'ansible', years: 0.5 },
+        ]
+    },
+    /*
+    {
+        title: "Practices",
+        description: "Development methodologies and practices",
+        skills: [
+            { name: 'Test-Driven Development' },
+            { name: 'Agile/Scrum' },
+            { name: 'Code Review' },
+            { name: 'CI/CD', icon: 'cicd' },
+            { name: 'API Design' },
+            { name: 'Database Design' },
+            { name: 'Performance Optimization' },
+        ]
+    },
+    */
+    {
+        title: "Tools",
+        description: "Development tools and environments",
+        skills: [
+            { name: 'VS Code', icon: 'vscode', years: 5 },
+            { name: 'Git', icon: 'git', years: 4 },
+            { name: 'Vite', icon: 'vite', years: 2 },
+            { name: 'Postman', icon: 'postman', years: 1 },
+        ]
+    }
 ];
-
-const tools: Skill[] = [
-    { name: 'Git', years: 5 },
-    { name: 'Docker', years: 3 },
-    { name: 'Webpack', years: 2 },
-    { name: 'VS Code', years: 5 },
-];
-
-const SkillsSection = ({ title, data }: { title: string; data: Skill[] }) => (
-    <div className="bg-neutral-800 rounded-xl shadow-md p-6 border border-stone-700 w-full">
-        <h2 className="text-2xl font-semibold mb-4 text-white">{title}</h2>
-        <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={data} layout="vertical">
-                <XAxis type="number" domain={[0, 6]} stroke="#ccc" />
-                <YAxis dataKey="name" type="category" width={100} stroke="#ccc" />
-                <Tooltip />
-                <Bar dataKey="years" fill="#ea580c" radius={[0, 10, 10, 0]} />
-            </BarChart>
-        </ResponsiveContainer>
-    </div>
-);
 
 const SkillsIndex = () => {
     return (
-        <section className="max-w-screen-lg mx-auto px-4 py-10 space-y-12">
-            <h1 className="text-4xl font-bold text-center text-white">Skills</h1>
-
-            <p className="text-stone-400 text-lg max-w-3xl text-left">
-                I specialize in graphics programming, full-stack development, and systems engineering. I work with technologies like React, TypeScript, WebGL, OpenGL, and Node.js. I also have experience with C++, Rust, and low-level system tools.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <SkillsSection title="Programming Languages" data={languages} />
-                <SkillsSection title="Frameworks & Libraries" data={frameworks} />
-                <SkillsSection title="Tools & Environments" data={tools} />
+        <section className="max-w-screen-xl mx-auto px-4 py-10 space-y-12">
+            <div className="text-center space-y-4">
+                <h1 className="text-4xl font-bold text-white">
+                    Skills & Expertise
+                </h1>
+                <div className="text-stone-300">
+                    I'm a <span className="text-orange-500">
+                        <TypewriterSwitch
+                            texts={[
+                                "Full-Stack Developer",
+                                "Graphics Programmer",
+                                "Systems Engineer",
+                                "Problem Solver"
+                            ]}
+                        />
+                    </span>
+                </div>
+                <p className="text-stone-400 text-lg max-w-4xl mx-auto">
+                    I specialize in graphics programming, full-stack development, and systems engineering.
+                    I work with modern technologies across the entire development stack, from low-level
+                    systems programming to responsive web applications.
+                </p>
             </div>
 
-            <div className="space-y-6">
-                <div>
-                    <h2 className="text-2xl font-semibold text-white">Languages I Enjoy</h2>
-                    <p className="text-stone-400 text-left">
-                        I enjoy working with TypeScript for its type safety and modern JavaScript features. C++ is a favorite for systems-level programming and performance-critical applications. Rust has been increasingly fun to learn, especially for its memory safety and concurrency model.
-                    </p>
-                </div>
-                <div>
-                    <h2 className="text-2xl font-semibold text-white">Frameworks I Rely On</h2>
-                    <p className="text-stone-400 text-left">
-                        React has been my go-to for frontend development, especially paired with Next.js for SSR and routing. Node.js and Express handle backend services with speed and flexibility.
-                    </p>
-                </div>
-                <div>
-                    <h2 className="text-2xl font-semibold text-white">Tools I Trust</h2>
-                    <p className="text-stone-400 text-left">
-                        Git and Docker are essential in my workflow for version control and deployment. I also enjoy customizing my setup in VS Code to streamline development.
-                    </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                {skillCategories.map((category, index) => (
+                    <SkillCard key={category.title} category={category} index={index} />
+                ))}
+            </div>
+
+            <div className="bg-neutral-800 rounded-xl p-6 border border-stone-700">
+                <h2 className="text-2xl font-semibold text-white mb-4">What I Love Working With</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-stone-400">
+                    <div>
+                        <h3 className="text-lg font-medium text-white mb-2">Languages</h3>
+                        <p className="text-sm">
+                            TypeScript for type safety, C++ for performance-critical applications,
+                            and Rust for its memory safety and modern approach to systems programming.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-medium text-white mb-2">Frameworks</h3>
+                        <p className="text-sm">
+                            React and Next.js for powerful frontend experiences, Node.js for scalable
+                            backend services, and modern tools that enhance developer productivity.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-medium text-white mb-2">Philosophy</h3>
+                        <p className="text-sm">
+                            I believe in writing clean, maintainable code, continuous learning,
+                            and leveraging the right tool for each specific problem.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
