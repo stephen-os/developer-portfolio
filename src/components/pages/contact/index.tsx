@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import TypewriterSwitch from '@/components/typewriter-switch';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
     name: string;
@@ -25,17 +26,17 @@ const ContactIndex = () => {
     });
     const [status, setStatus] = useState<FormStatus>({ type: null, message: '' });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
-    };
+    }, []);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = useCallback(async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         // Basic validation
         if (!formData.name || !formData.email || !formData.message) {
             setStatus({
@@ -45,23 +46,45 @@ const ContactIndex = () => {
             return;
         }
 
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setStatus({
+                type: 'error',
+                message: 'Please enter a valid email address.'
+            });
+            return;
+        }
+
         setStatus({ type: 'loading', message: 'Sending message...' });
 
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            // EmailJS configuration
+            const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+            const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+            const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-            const result = await response.json();
+            // Template parameters for EmailJS
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                subject: formData.subject || 'Contact Form Submission',
+                message: formData.message,
+                to_name: 'Stephen Watson',
+                reply_to: formData.email,
+            };
 
-            if (response.ok) {
+            const response = await emailjs.send(
+                serviceId,
+                templateId,
+                templateParams,
+                publicKey
+            );
+
+            if (response.status === 200) {
                 setStatus({
                     type: 'success',
-                    message: 'Thank you! Your message has been sent successfully.'
+                    message: 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24-48 hours.'
                 });
                 // Reset form
                 setFormData({
@@ -71,26 +94,24 @@ const ContactIndex = () => {
                     message: ''
                 });
             } else {
-                setStatus({
-                    type: 'error',
-                    message: result.error || 'Failed to send message. Please try again.'
-                });
+                throw new Error('Failed to send email');
             }
         } catch (error) {
+            console.error('EmailJS Error:', error);
             setStatus({
                 type: 'error',
-                message: 'Network error. Please check your connection and try again.'
+                message: 'Failed to send message. Please try again or contact me directly via email.'
             });
         }
-    };
+    }, [formData]);
 
     return (
         <section className="max-w-screen-xl mx-auto px-4 py-10 space-y-12">
             {/* Header Section */}
             <div className="text-center space-y-4">
                 <h1 className="text-4xl font-bold text-white">
-                    <TypewriterSwitch 
-                        texts={["Get In Touch", "Contact Me", "Let's Connect", "Start a Conversation"]} 
+                    <TypewriterSwitch
+                        texts={["Get In Touch", "Contact Me", "Let's Connect", "Start a Conversation"]}
                         typingSpeed={100}
                         deletingSpeed={50}
                         delayBetween={2000}
@@ -100,7 +121,7 @@ const ContactIndex = () => {
                     Ready to collaborate on something <span className="text-orange-500 font-semibold">amazing</span>?
                 </div>
                 <p className="text-stone-400 text-lg max-w-3xl mx-auto">
-                    Whether you want to discuss a project, collaborate on something creative, explore new opportunities, 
+                    Whether you want to discuss a project, collaborate on something creative, explore new opportunities,
                     or just chat about graphics programming and development, I'd love to hear from you.
                 </p>
             </div>
@@ -125,11 +146,11 @@ const ContactIndex = () => {
                                 <p className="text-stone-400 text-sm">Drop me a line anytime</p>
                             </div>
                         </div>
-                        <a 
-                            href="mailto:your.email@example.com" 
+                        <a
+                            href="mailto:ImStephenTylerWatson@gmail.com"
                             className="text-orange-500 hover:text-orange-400 transition-colors"
                         >
-                            your.email@example.com
+                            ImStephenTylerWatson@gmail.com
                         </a>
                     </motion.div>
 
@@ -184,14 +205,13 @@ const ContactIndex = () => {
                 >
                     <form onSubmit={handleSubmit} className="bg-neutral-800 border border-stone-700 p-8 rounded-xl shadow-lg space-y-6">
                         <h2 className="text-2xl font-semibold text-white mb-6">Send me a message</h2>
-                        
+
                         {/* Status Message */}
                         {status.type && (
-                            <div className={`p-4 rounded-lg ${
-                                status.type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' :
+                            <div className={`p-4 rounded-lg ${status.type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' :
                                 status.type === 'error' ? 'bg-red-500/20 border border-red-500/30 text-red-400' :
-                                'bg-orange-500/20 border border-orange-500/30 text-orange-400'
-                            }`}>
+                                    'bg-orange-500/20 border border-orange-500/30 text-orange-400'
+                                }`}>
                                 {status.message}
                             </div>
                         )}
@@ -242,11 +262,11 @@ const ContactIndex = () => {
                                 className="bg-neutral-900 border border-stone-600 p-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                             >
                                 <option value="">Select a topic</option>
-                                <option value="project">Project Collaboration</option>
-                                <option value="job">Job Opportunity</option>
-                                <option value="consulting">Consulting Inquiry</option>
-                                <option value="question">Technical Question</option>
-                                <option value="other">Other</option>
+                                <option value="Project Collaboration">Project Collaboration</option>
+                                <option value="Job Opportunity">Job Opportunity</option>
+                                <option value="Consulting Inquiry">Consulting Inquiry</option>
+                                <option value="Technical Question">Technical Question</option>
+                                <option value="General Inquiry">General Inquiry</option>
                             </select>
                         </div>
 
