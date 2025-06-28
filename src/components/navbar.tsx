@@ -81,7 +81,7 @@ export default function Navbar() {
                         <Link href="/skills" onClick={closeMenu}><FaIcons.FaTools className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
                         <Link href="/experience" onClick={closeMenu}><FaIcons.FaBriefcase className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
                         <Link href="/projects" onClick={closeMenu}><FaIcons.FaCode className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
-                        <Link href="/blog" onClick={closeMenu}><FaIcons.FaFolderOpen className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
+                        <Link href="/blogs" onClick={closeMenu}><FaIcons.FaFolderOpen className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
                         <Link href="/contact" onClick={closeMenu}><FaIcons.FaEnvelope className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
 
                         <div className="flex space-x-6 pt-4">
