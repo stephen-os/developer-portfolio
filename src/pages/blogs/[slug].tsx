@@ -18,9 +18,16 @@ type Props = {
 export default function BlogPage({ source, data }: Props) {
     return (
         <Layout>
-            <article className="prose prose-invert max-w-3xl mx-auto py-10">
-                <h1>{data.title}</h1>
-                <p className="text-lg text-gray-400">{data.description}</p>
+            <article className="w-full max-w-5xl mx-auto px-4 py-10">
+                {/* Project Header */}
+                <header className="mb-8 text-center">
+                    <h1 className="text-4xl font-bold text-white mb-4">{data.title}</h1>
+                    {data.description && (
+                        <p className="text-xl text-stone-300 mb-6">{data.description}</p>
+                    )}
+                </header>
+
+                {/* Markdown Content */}
                 <MarkdownRenderer source={source} />
             </article>
         </Layout>
