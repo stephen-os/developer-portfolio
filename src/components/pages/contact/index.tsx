@@ -84,7 +84,7 @@ const ContactIndex = () => {
             if (response.status === 200) {
                 setStatus({
                     type: 'success',
-                    message: 'Thank you! Your message has been sent successfully. I&apos;ll get back to you within 24-48 hours.'
+                    message: 'Thank you! Your message has been sent successfully. I will get back to you within 24-48 hours.'
                 });
                 // Reset form
                 setFormData({

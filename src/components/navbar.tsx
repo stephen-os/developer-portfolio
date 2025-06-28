@@ -55,14 +55,14 @@ export default function Navbar() {
                     <Link href="/skills"><FaIcons.FaTools className="text-stone-500 hover:text-orange-400" /></Link>
                     <Link href="/experience"><FaIcons.FaBriefcase className="text-stone-500 hover:text-orange-400" /></Link>
                     <Link href="/projects"><FaIcons.FaCode className="text-stone-500 hover:text-orange-400" /></Link>
-                    <Link href="/blog"><FaIcons.FaFolderOpen className="text-stone-500 hover:text-orange-400" /></Link>
+                    <Link href="/blogs"><FaIcons.FaFolderOpen className="text-stone-500 hover:text-orange-400" /></Link>
                     <Link href="/contact"><FaIcons.FaEnvelope className="text-stone-500 hover:text-orange-400" /></Link>
                 </div>
 
                 {/* Desktop Social Icons (Right) */}
                 <div className="hidden md:flex space-x-4">
-                    <Link href="https://www.linkedin.com/in/stephen-os"><FaIcons.FaLinkedin className="text-stone-500 hover:text-orange-400" /></Link>
-                    <Link href="https://github.com/stephen-os"><FaIcons.FaGithub className="text-stone-500 hover:text-orange-400" /></Link>
+                    <Link href="https://www.linkedin.com/in/stw-dev"><FaIcons.FaLinkedin className="text-stone-500 hover:text-orange-400" /></Link>
+                    <Link href="https://github.com/stw-dev"><FaIcons.FaGithub className="text-stone-500 hover:text-orange-400" /></Link>
                 </div>
             </div>
 
@@ -85,8 +85,8 @@ export default function Navbar() {
                         <Link href="/contact" onClick={closeMenu}><FaIcons.FaEnvelope className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
 
                         <div className="flex space-x-6 pt-4">
-                            <Link href="https://www.linkedin.com/in/stephen-os"><FaIcons.FaLinkedin className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
-                            <Link href="https://github.com/stephen-os"><FaIcons.FaGithub className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
+                            <Link href="https://www.linkedin.com/in/stw-dev"><FaIcons.FaLinkedin className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
+                            <Link href="https://github.com/stw-dev"><FaIcons.FaGithub className="text-3xl text-stone-500 hover:text-orange-400" /></Link>
                         </div>
                     </motion.div>
                 )}

@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TypewriterSwitch from '@/components/typewriter-switch';
-import { GitHubStatistics } from '@/components/github-stats';
-import { LeetCodeStatistics } from '@/components/leetcode-stats';
 import profilePic from '@/assets/profile_pic.jpg';
 
 const HomeIndex = () => {
@@ -143,28 +141,6 @@ const HomeIndex = () => {
                         <p className="text-stone-400 text-sm">Exploring Ansible, OpenShift, and RHEL</p>
                     </div>
                 </div>
-            </motion.div>
-
-            {/* GitHub Statistics */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="space-y-4"
-            >
-                <h2 className="text-2xl font-semibold text-white text-center">Development Activity</h2>
-                <GitHubStatistics />
-            </motion.div>
-
-            {/* LeetCode Statistics */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="space-y-4"
-            >
-                <h2 className="text-2xl font-semibold text-white text-center">Problem Solving</h2>
-                <LeetCodeStatistics />
             </motion.div>
 
             {/* Featured Projects Preview */}

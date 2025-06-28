@@ -36,7 +36,7 @@ const skillCategories: SkillCategory[] = [
         description: "Client-side frameworks and technologies",
         skills: [
             { name: 'React', icon: 'react', years: 2 },
-            { name: 'Next.js', icon: 'nextjs', years: 0.5 },
+            { name: 'Next.js', icon: 'nextJS', years: 0.5 },
             { name: 'TypeScript', icon: 'typescript', years: 2 },
             { name: 'JavaScript', icon: 'javascript', years: 2 },
             { name: 'Tailwind CSS', icon: 'tailwind', years: 1 },
@@ -51,7 +51,7 @@ const skillCategories: SkillCategory[] = [
             { name: 'Linux', icon: 'linux', years: 3 },
             { name: 'Docker', icon: 'docker', years: 0.5 },
             { name: 'OpenShift', icon: 'openshift', years: 0.5 },
-            { name: 'RHEL', icon: 'redhat', years: 0.5 },
+            { name: 'RHEL', icon: 'rhel', years: 0.5 },
             { name: 'Ansible', icon: 'ansible', years: 0.5 },
         ]
     },

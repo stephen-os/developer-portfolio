@@ -35,7 +35,7 @@ export const getAllBlogs = (): Blog[] => {
                 slug,
                 title: data.title,
                 description: data.description,
-                image: `/images/${data.image}`,
+                image: `${data.image}`,
                 date: data.date || null,
                 readTime: data.readTime || null,
                 tags: data.tags || [],

@@ -1,7 +1,7 @@
 ---
 title: "Welcome to My Development Journey"
 description: "An introduction to my blogging journey, what drives my passion for technology, and what you can expect from future posts."
-image: "blogs/first-post/cover.jpg"
+image: "first-post/cover.jpg"
 date: "2025-06-26"
 readTime: "4 min read"
 tags: ["Introduction", "Blogging", "Personal", "Development Journey"]
