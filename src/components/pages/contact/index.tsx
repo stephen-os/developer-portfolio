@@ -84,7 +84,7 @@ const ContactIndex = () => {
             if (response.status === 200) {
                 setStatus({
                     type: 'success',
-                    message: 'Thank you! Your message has been sent successfully. I\'ll get back to you within 24-48 hours.'
+                    message: 'Thank you! Your message has been sent successfully. I&apos;ll get back to you within 24-48 hours.'
                 });
                 // Reset form
                 setFormData({
@@ -122,7 +122,7 @@ const ContactIndex = () => {
                 </div>
                 <p className="text-stone-400 text-lg max-w-3xl mx-auto">
                     Whether you want to discuss a project, collaborate on something creative, explore new opportunities,
-                    or just chat about graphics programming and development, I'd love to hear from you.
+                    or just chat about graphics programming and development, I&apos;d love to hear from you.
                 </p>
             </div>
 
@@ -169,7 +169,7 @@ const ContactIndex = () => {
                             </div>
                             <div>
                                 <h3 className="text-white font-semibold">Location</h3>
-                                <p className="text-stone-400 text-sm">Where I'm based</p>
+                                <p className="text-stone-400 text-sm">Where I&apos;m based</p>
                             </div>
                         </div>
                         <p className="text-stone-300">Waynesboro, Virginia, US</p>
@@ -189,7 +189,7 @@ const ContactIndex = () => {
                             </div>
                             <div>
                                 <h3 className="text-white font-semibold">Response Time</h3>
-                                <p className="text-stone-400 text-sm">I'll get back to you</p>
+                                <p className="text-stone-400 text-sm">I&apos;ll get back to you</p>
                             </div>
                         </div>
                         <p className="text-stone-300">Within 24-48 hours</p>

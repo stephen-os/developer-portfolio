@@ -151,7 +151,7 @@ const BlogIndex = ({ blogs }: Props) => {
                     </div>
                     <h2 className="text-2xl font-semibold text-white mb-4">Coming Soon!</h2>
                     <p className="text-stone-400 mb-6 max-w-md mx-auto">
-                        I'm currently working on some exciting blog posts about graphics programming,
+                        I&apos;m currently working on some exciting blog posts about graphics programming,
                         web development, and my latest projects. Stay tuned!
                     </p>
                     <div className="flex justify-center gap-4">
@@ -178,9 +178,9 @@ const BlogIndex = ({ blogs }: Props) => {
                 transition={{ delay: 0.5 }}
                 className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-xl p-8 text-center"
             >
-                <h2 className="text-2xl font-semibold text-white mb-4">Let's Connect</h2>
+                <h2 className="text-2xl font-semibold text-white mb-4">Let&apos;s Connect</h2>
                 <p className="text-stone-400 mb-6">
-                    I'm always interested in discussing technology, collaborating on projects, or just having a good conversation about development and innovation.
+                    I&apos;m always interested in discussing technology, collaborating on projects, or just having a good conversation about development and innovation.
                 </p>
                 <div className="flex justify-center gap-4">
                     <Link

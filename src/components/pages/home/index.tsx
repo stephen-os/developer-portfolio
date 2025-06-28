@@ -21,7 +21,7 @@ const HomeIndex = () => {
                 <div className="flex-1 text-center lg:text-left space-y-6">
                     <div className="space-y-4">
                         <h1 className="text-4xl lg:text-5xl font-bold text-white">
-                            Hi, I'm{" "}
+                            Hi, I&apos;m{" "}
                             <span className="text-orange-500">
                                 <TypewriterSwitch
                                     texts={["Stephen Watson", "a Software Engineer", "a Developer", "a Problem Solver"]}
@@ -39,7 +39,7 @@ const HomeIndex = () => {
                     </div>
 
                     <p className="text-stone-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        I'm a recent Computer Science graduate from James Madison University with a passion for
+                        I&apos;m a recent Computer Science graduate from James Madison University with a passion for
                         creating innovative solutions. From 3D graphics programming to modern web applications,
                         I love tackling complex technical challenges.
                     </p>
@@ -163,7 +163,7 @@ const HomeIndex = () => {
                 transition={{ duration: 0.8, delay: 1.0 }}
                 className="space-y-4"
             >
-                <h2 className="text-2xl font-semibent text-white text-center">Problem Solving</h2>
+                <h2 className="text-2xl font-semibold text-white text-center">Problem Solving</h2>
                 <LeetCodeStatistics />
             </motion.div>
 

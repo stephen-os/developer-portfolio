@@ -1,5 +1,3 @@
-// components/MarkdownRenderer.tsx
-
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Image from 'next/image';
 import type { ImgHTMLAttributes } from 'react';
@@ -70,7 +68,7 @@ export default function MarkdownRenderer({
 }) {
     return (
         <div className={CLEAN_STYLE}>
-            <MDXRemote {...source} />
+            <MDXRemote {...source} components={components} />
         </div>
     );
 }

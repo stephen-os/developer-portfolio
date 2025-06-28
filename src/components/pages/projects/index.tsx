@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Project } from '@/lib/get-projects';
 import ProjectCard from './project-card';
 import TypewriterSwitch from '@/components/typewriter-switch';
@@ -40,8 +41,8 @@ const ProjectsIndex = ({ projects }: Props) => {
             <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-xl p-8 text-center">
                 <h2 className="text-2xl font-semibold text-white mb-4">Interested in My Work?</h2>
                 <p className="text-stone-400 mb-6">
-                    These projects represent just a glimpse of what I'm passionate about.
-                    I'm always working on something new and would love to discuss potential collaborations.
+                    These projects represent just a glimpse of what I&apos;m passionate about.
+                    I&apos;m always working on something new and would love to discuss potential collaborations.
                 </p>
                 <div className="flex justify-center gap-4">
                     <a
@@ -52,12 +53,12 @@ const ProjectsIndex = ({ projects }: Props) => {
                     >
                         View All on GitHub
                     </a>
-                    <a
+                    <Link
                         href="/contact"
                         className="border border-stone-500 text-stone-300 hover:text-white hover:border-stone-300 font-medium px-6 py-3 rounded-full transition-colors"
                     >
                         Get In Touch
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

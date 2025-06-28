@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TypewriterSwitch from '@/components/typewriter-switch';
 
@@ -94,7 +95,7 @@ const getTypeLabel = (type: ExperienceItem['type']) => {
     }
 };
 
-const ExperienceCard = ({ item, index }: { item: ExperienceItem; index: number }) => (
+const ExperienceCard = ({ item }: { item: ExperienceItem }) => (
     <motion.div
         variants={cardVariants}
         className="bg-neutral-800 hover:bg-neutral-700 rounded-xl p-6 shadow-md border border-stone-700 transition-colors duration-200"
@@ -146,7 +147,7 @@ const ExperienceIndex = () => {
                 className="space-y-6"
             >
                 {experiences.map((item, index) => (
-                    <ExperienceCard key={index} item={item} index={index} />
+                    <ExperienceCard key={index} item={item} />
                 ))}
             </motion.div>
 
@@ -154,16 +155,16 @@ const ExperienceIndex = () => {
             <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-xl p-8 text-center">
                 <h2 className="text-2xl font-semibold text-white mb-4">Ready to Work Together?</h2>
                 <p className="text-stone-400 mb-6">
-                    I'm always open to discussing new opportunities, whether it's full-time positions,
+                    I&apos;m always open to discussing new opportunities, whether it&apos;s full-time positions,
                     consulting projects, or collaborative ventures in technology.
                 </p>
                 <div className="flex justify-center gap-4">
-                    <a
+                    <Link
                         href="/contact"
                         className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-full transition-colors"
                     >
-                        Let's Connect
-                    </a>
+                        Let&apos;s Connect
+                    </Link>
                     <a
                         href="/resume.pdf"
                         target="_blank"

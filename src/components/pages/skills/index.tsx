@@ -90,7 +90,7 @@ const SkillsIndex = () => {
                     Skills & Expertise
                 </h1>
                 <div className="text-stone-300">
-                    I'm a <span className="text-orange-500">
+                    I&apos;m a <span className="text-orange-500">
                         <TypewriterSwitch
                             texts={[
                                 "Full-Stack Developer",

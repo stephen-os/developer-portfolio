@@ -63,7 +63,7 @@ const AboutIndex = () => {
                     />
                 </h1>
                 <div className="text-xl text-stone-300 max-w-4xl mx-auto">
-                    Hi, I'm <span className="text-orange-500 font-semibold">Stephen</span> — a passionate developer from the Shenandoah Valley
+                    Hi, I&apos;m <span className="text-orange-500 font-semibold">Stephen</span> — a passionate developer from the Shenandoah Valley
                 </div>
             </div>
 
@@ -74,9 +74,9 @@ const AboutIndex = () => {
                 className="bg-neutral-800 rounded-xl p-8 shadow-md border border-stone-700 text-center"
             >
                 <p className="text-stone-400 text-lg leading-relaxed max-w-4xl mx-auto">
-                    My name is Stephen, and I'm from a small town called Stuarts Draft in the Shenandoah Valley.
+                    My name is Stephen, and I&apos;m from a small town called Stuarts Draft in the Shenandoah Valley.
                     I first got into programming in high school when one of my favorite teachers introduced a new course on game development.
-                    While the class wasn't very technical, it exposed me to the foundations of programming — and I was hooked.
+                    While the class wasn&apos;t very technical, it exposed me to the foundations of programming — and I was hooked.
                 </p>
             </motion.div>
 
@@ -150,7 +150,7 @@ const AboutIndex = () => {
                     giving them insight into how various approaches performed on real, dynamic data.
                 </p>
                 <p>
-                    We were thrilled to win <span className="text-orange-500 font-medium">first place</span> in the conference's flash talk competition, earning recognition for both our technical execution and presentation.
+                    We were thrilled to win <span className="text-orange-500 font-medium">first place</span> in the conference&apos;s flash talk competition, earning recognition for both our technical execution and presentation.
                 </p>
             </AboutSection>
 
@@ -163,7 +163,7 @@ const AboutIndex = () => {
                 index={4}
             >
                 <p>
-                    I have a strong passion for computer graphics and machine learning, but outside of development, I'm just as drawn to music and the outdoors.
+                    I have a strong passion for computer graphics and machine learning, but outside of development, I&apos;m just as drawn to music and the outdoors.
                     I play guitar and love going to concerts whenever I get the chance.
                 </p>
                 <p>
@@ -171,7 +171,7 @@ const AboutIndex = () => {
                     I also frequently hike the trails near my home, which helps me recharge and stay inspired.
                 </p>
                 <p>
-                    These experiences outside of technology keep me grounded and often provide unexpected inspiration for my work. Whether it's the mathematical patterns in music or the problem-solving required for outdoor adventures, I find that diverse interests make me a better developer.
+                    These experiences outside of technology keep me grounded and often provide unexpected inspiration for my work. Whether it&apos;s the mathematical patterns in music or the problem-solving required for outdoor adventures, I find that diverse interests make me a better developer.
                 </p>
             </AboutSection>
 
@@ -182,9 +182,9 @@ const AboutIndex = () => {
                 transition={{ delay: 0.5 }}
                 className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-xl p-8 text-center"
             >
-                <h2 className="text-2xl font-semibold text-white mb-4">Let's Connect</h2>
+                <h2 className="text-2xl font-semibold text-white mb-4">Let&apos;s Connect</h2>
                 <p className="text-stone-400 mb-6">
-                    I'm always interested in discussing technology, collaborating on projects, or just having a good conversation about development and innovation.
+                    I&apos;m always interested in discussing technology, collaborating on projects, or just having a good conversation about development and innovation.
                 </p>
                 <div className="flex justify-center gap-4">
                     <Link
