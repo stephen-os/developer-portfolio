@@ -86,7 +86,6 @@ const ProjectCard = ({ project, index }: Props) => {
                             height={240}
                             className="rounded-lg object-cover w-full h-60 border border-stone-600 group-hover:border-stone-500 transition-colors"
                         />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors rounded-lg"></div>
                     </div>
                 </div>
             </div>
