@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Project } from '@/lib/get-projects';
+import { Projects } from '@/lib/project';
 import ProjectCard from './project-card';
 import TypewriterSwitch from '@/components/typewriter-switch';
 
 type Props = {
-    projects: Project[];
+    projects: Projects;
 };
 
 const ProjectsIndex = ({ projects }: Props) => {
@@ -30,12 +30,65 @@ const ProjectsIndex = ({ projects }: Props) => {
                 </p>
             </div>
 
-            {/* Projects Grid */}
-            <div className="space-y-8">
-                {projects.map((project, i) => (
-                    <ProjectCard key={project.slug} project={project} index={i} />
-                ))}
-            </div>
+            {/* Featured Projects */}
+            {projects.featured.length > 0 && (
+                <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                        <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
+                        <div className="h-0.5 flex-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
+                    </div>
+                    <div className="space-y-8">
+                        {projects.featured.map((project, i) => (
+                            <ProjectCard key={project.slug} project={project} index={i} />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Important Projects */}
+            {projects.important.length > 0 && (
+                <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                        <h2 className="text-2xl font-semibold text-white">Important Projects</h2>
+                        <div className="h-0.5 flex-1 bg-gradient-to-r from-stone-400 to-transparent"></div>
+                    </div>
+                    <div className="space-y-8">
+                        {projects.important.map((project, i) => (
+                            <ProjectCard key={project.slug} project={project} index={i + projects.featured.length} />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Standard Projects */}
+            {projects.standard.length > 0 && (
+                <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                        <h2 className="text-2xl font-semibold text-stone-300">Other Projects</h2>
+                        <div className="h-0.5 flex-1 bg-gradient-to-r from-stone-600 to-transparent"></div>
+                    </div>
+                    <div className="space-y-8">
+                        {projects.standard.map((project, i) => (
+                            <ProjectCard key={project.slug} project={project} index={i + projects.featured.length + projects.important.length} />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Archive Projects - Only show if there are any */}
+            {projects.archive.length > 0 && (
+                <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                        <h2 className="text-xl font-medium text-stone-400">Archive</h2>
+                        <div className="h-0.5 flex-1 bg-gradient-to-r from-stone-700 to-transparent"></div>
+                    </div>
+                    <div className="space-y-6">
+                        {projects.archive.map((project, i) => (
+                            <ProjectCard key={project.slug} project={project} index={i + projects.featured.length + projects.important.length + projects.standard.length} />
+                        ))}
+                    </div>
+                </div>
+            )}
 
             {/* Footer Call to Action */}
             <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-xl p-8 text-center">

@@ -1,15 +1,14 @@
-// pages/projects/index.tsx
 import { GetStaticProps } from 'next';
 import Layout from '@/pages/layout';
 import ProjectsIndex from '@/components/pages/projects/index';
-import { getAllProjects, Project } from '@/lib/get-projects';
+import { Projects, ProjectLoader } from '@/lib/project';
 
 type Props = {
-    projects: Project[];
+    projects: Projects;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const projects = getAllProjects();
+    const projects = ProjectLoader.getCategorizedProjects();
 
     return {
         props: {
@@ -18,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     };
 };
 
-export default function Projects({ projects }: Props) {
+export default function ProjectsPage({ projects }: Props) {
     return (
         <Layout>
             <ProjectsIndex projects={projects} />
