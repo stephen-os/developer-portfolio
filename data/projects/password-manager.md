@@ -2,7 +2,7 @@
 title: "Password Manger"
 description: "Manage passwords"
 image: "/projects/password-manager/logo.png"
-github: https://github.com/stw-dev/password-manger
+github: https://github.com/stephen-os/password-manger
 tech:
    - rust
 ---

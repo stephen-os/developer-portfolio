@@ -2,7 +2,7 @@
 title: "Frequency Visualiser"
 description: "A dynamic real-time waveform rendering tool"
 image: "/projects/frequency-visualiser/screenshot.png"
-github: https://github.com/stw-dev/frequency-visualiser
+github: https://github.com/stephen-os/frequency-visualiser
 tech:
    - c
    - cplusplus
