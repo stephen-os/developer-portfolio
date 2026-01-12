@@ -51,7 +51,7 @@ const containerVariants = {
             staggerChildren: 0.15,
         },
     },
-};
+} as const;
 
 const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -63,7 +63,7 @@ const cardVariants = {
             ease: 'easeOut'
         }
     },
-};
+} as const;
 
 const getTypeColor = (type: ExperienceItem['type']) => {
     switch (type) {

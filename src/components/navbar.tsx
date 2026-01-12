@@ -35,7 +35,7 @@ export default function Navbar() {
                 ease: "easeInOut"
             },
         },
-    };
+    } as const;
 
     return (
         <nav className="fixed top-0 left-0 w-full bg-neutral-900 h-14 z-30 shadow-md">
