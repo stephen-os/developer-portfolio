@@ -4,8 +4,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import * as FaIcons from "react-icons/fa";
 
-import profilePic from "../assets/profile_pic.jpg";
-
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +39,7 @@ export default function Navbar() {
         <nav className="fixed top-0 left-0 w-full bg-neutral-900 h-14 z-30 shadow-md">
             <div className="flex justify-between items-center px-4 h-full">
                 {/* Logo */}
-                <Image src={profilePic} alt="logo" width={32} height={32} className="rounded-full object-cover z-50" priority />
+                <Image src="/assets/profile-small.png" alt="logo" width={32} height={32} className="rounded-full object-cover z-50" priority />
 
                 {/* Hamburger Menu Icon (Mobile Only) */}
                 <div className="md:hidden z-50" onClick={toggleMenu}>

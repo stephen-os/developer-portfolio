@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TypewriterSwitch from '@/components/typewriter-switch';
-import profilePic from '@/assets/profile_pic.jpg';
 
 const HomeIndex = () => {
     return (
@@ -68,7 +67,7 @@ const HomeIndex = () => {
                 >
                     <div className="relative">
                         <Image
-                            src={profilePic}
+                            src="/assets/profile-normal.png"
                             alt="Stephen Watson - Profile Picture"
                             width={300}
                             height={300}
