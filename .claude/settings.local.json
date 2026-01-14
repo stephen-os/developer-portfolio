@@ -5,7 +5,8 @@
       "Bash(npm outdated:*)",
       "Bash(npm update)",
       "Bash(npm run build:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(cmd //c \"rmdir /s /q .next\")"
     ]
   }
 }
